@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Possibility Fund Limited — Fund, Portfolio &amp; Wealth Managers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="ticker-bar" aria-hidden="true">
+  <div class="ticker-inner">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </div>
+</div>
+<div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
+
+<header class="site">
+  <div class="nav">
+    <a href="#top" class="brand">
+      <img src="data:image/jpeg;base64,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mrkv2d/QpRG7JO0M4mtrr8DgcCEaCwZv3QN1t8nr94Jhk+J7d8JR3zvM+CuaJyZ8NI2Tfh1kV8XfESJi74g7RODviqWwd8VC2DnipTg74qmLvirYu9D/2gAMAwEAAgADAAAAEKwwwwwyafB2wwwwwwwwx1/fffffQAvBz/ffffffffQPfffffVK/PDHffffffffQPfffffeo/PKe/fffffffQPfffffZYfPArRfffffffQPffffXc5vPPC33/fffffQPffffSFfPPPPLKUQ5+fQU/fffeRYRTdAHaUvOMHP7gPffXQy5MI+EbvI/PPPPPPPXiiivDktV5rr5vPPBMePzgvafPB3rzHPAKvAq9/fQPPPPPPFrBnrPETgr+JffQDTjy1dPOChc+vvCGffffQAPfe5ZRNjY0+hl0/ffffQPfffUqZ4LPPPPPAfffffQPffffffaav8AzzwbH33330D33333332h0vzwOz33330D333333331SnzwMH33330D3333333331TzxEH33330AT33333333/AM887l99999D/wDPPPPPPPIgvPIXvPPPPIP/xAAuEQABAwIFAgYDAAIDAAAAAAABAAIDBBEFEiAhMRATFDAyM0FSIlFxQoFhobH/2gAIAQIBAT8AsFYKwVgrBWC2VH7DemJC8BQAVgrBWCsFYKwVgrBWC2Q1ftUfsN/nSpZnic1H9eU7lDV+1R+w3rWQmKU/ryncoa6P2G9cRp+4zM3kf+eU7lDUVA3LE0f8aK+kMZzs4K2+PIdyhpIuqePuyBqtbQ5ocLFVWHFn5R8I7HjW7lDSPlYTAbmQ656GKXcbFS4dNFuNwi0tO4W3S3SyGmGJ0r8rVFGI2BoTnBouVJiD3OywNQirn7l1llro973VJPLKD3G2WIVDhJlYVhrMsN/30cxruQjSwnlq8FT/AFXgaf6heCp/qvBwfVDQxjpHBrVR0ogbvz0e51ZPkb6QooWRNysCnxTtktDd1E8vYHO5VZWH2ofUqWkZAMz/AFFAAbDyAiQgoaWSZ1mcKmo44Btz0r5O3ASFh8XbhB+SqyrEIyt9Sjw3uDPKd1V1eU9mHlUdGIPyPqKxNhyB4+FA/PGHaJp44Rd5UmLfQI4hUH5XjKg/5IUkx4amYZO71WChwuNu790GhosOuKe0P6pK1sULWs5sqSjIPdk5VXWH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" alt="">
+      <span>Possibility Fund</span>
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="#products" data-nav-link>Products</a>
+      <a href="#approach" data-nav-link>Approach</a>
+      <a href="#clients" data-nav-link>Clients</a>
+      <a href="#location" data-nav-link>Location</a>
+      <a href="#contact" class="cta-btn">Talk to us</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="border-top:none;">
+    <div class="hero-glow" id="heroGlow"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <div class="kicker-line"><span class="rule"></span> Fund, Portfolio &amp; Wealth Managers</div>
+        <h1 class="headline">Investing is a discipline, not a <em>guess</em>.</h1>
+        <p class="lede">Possibility Fund Limited builds and manages portfolios for individuals and institutions who want their capital handled with the same rigour they apply to their own work.</p>
+        <div class="mood-chip" id="moodChip"><span class="dot"></span> Reading today's market pulse…</div>
+        <div class="hero-actions">
+          <a href="#contact" class="cta-btn">Start a conversation</a>
+          <a href="#products" class="ghost-btn">See our products</a>
+        </div>
+        <div class="ledger">
+          <div class="ledger-row"><span class="label">Core mandates</span><span class="figure">Portfolio Management · Mutual Funds</span></div>
+          <div class="ledger-row"><span class="label">Client base</span><span class="figure">Individuals &amp; institutions</span></div>
+          <div class="ledger-row"><span class="label">Approach</span><span class="figure">Research-led, risk-managed</span></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="mark-frame">
+          <img src="data:image/jpeg;base64,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mrkv2d/QpRG7JO0M4mtrr8DgcCEaCwZv3QN1t8nr94Jhk+J7d8JR3zvM+CuaJyZ8NI2Tfh1kV8XfESJi74g7RODviqWwd8VC2DnipTg74qmLvirYu9D/2gAMAwEAAgADAAAAEKwwwwwyafB2wwwwwwwwx1/fffffQAvBz/ffffffffQPfffffVK/PDHffffffffQPfffffeo/PKe/fffffffQPfffffZYfPArRfffffffQPffffXc5vPPC33/fffffQPffffSFfPPPPLKUQ5+fQU/fffeRYRTdAHaUvOMHP7gPffXQy5MI+EbvI/PPPPPPPXiiivDktV5rr5vPPBMePzgvafPB3rzHPAKvAq9/fQPPPPPPFrBnrPETgr+JffQDTjy1dPOChc+vvCGffffQAPfe5ZRNjY0+hl0/ffffQPfffUqZ4LPPPPPAfffffQPffffffaav8AzzwbH33330D33333332h0vzwOz33330D333333331SnzwMH33330D3333333331TzxEH33330AT33333333/AM887l99999D/wDPPPPPPPIgvPIXvPPPPIP/xAAuEQABAwIFAgYDAAIDAAAAAAABAAIDBBEFEiAhMRATFDAyM0FSIlFxQoFhobH/2gAIAQIBAT8AsFYKwVgrBWC2VH7DemJC8BQAVgrBWCsFYKwVgrBWC2Q1ftUfsN/nSpZnic1H9eU7lDV+1R+w3rWQmKU/ryncoa6P2G9cRp+4zM3kf+eU7lDUVA3LE0f8aK+kMZzs4K2+PIdyhpIuqePuyBqtbQ5ocLFVWHFn5R8I7HjW7lDSPlYTAbmQ656GKXcbFS4dNFuNwi0tO4W3S3SyGmGJ0r8rVFGI2BoTnBouVJiD3OywNQirn7l1llro973VJPLKD3G2WIVDhJlYVhrMsN/30cxruQjSwnlq8FT/AFXgaf6heCp/qvBwfVDQxjpHBrVR0ogbvz0e51ZPkb6QooWRNysCnxTtktDd1E8vYHO5VZWH2ofUqWkZAMz/AFFAAbDyAiQgoaWSZ1mcKmo44Btz0r5O3ASFh8XbhB+SqyrEIyt9Sjw3uDPKd1V1eU9mHlUdGIPyPqKxNhyB4+FA/PGHaJp44Rd5UmLfQI4hUH5XjKg/5IUkx4amYZO71WChwuNu790GhosOuKe0P6pK1sULWs5sqSjIPdk5VXWH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" alt="Possibility Fund Limited mark" id="heroMark">
+          <svg class="growth-line" viewBox="0 0 260 90" preserveAspectRatio="none">
+            <path d="M4 74 L46 58 L84 66 L124 34 L168 42 L206 16 L256 22"/>
+            <circle cx="256" cy="22" r="4"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-head">
+            <span class="num">01 / OFFERINGS</span>
+          </div>
+          <h2>What we manage money into</h2>
+          <p class="section-sub">Two mandates today, built to be held for the long run — with a third joining the shelf shortly.</p>
+        </div>
+      </div>
+      <div class="product-list" id="productList">
+
+        <div class="product reveal" data-i="1">
+          <div class="idx">01</div>
+          <div class="body">
+            <h3>Portfolio Management</h3>
+            <p class="summary">A discretionary mandate built around your goals, time horizon and appetite for risk — equities, fixed income and money market instruments managed as one coherent portfolio.</p>
+            <div class="detail">We start with a written investment policy, then manage to it — rebalancing on discipline rather than emotion, and reporting in plain language so you always know what you hold and why. Available to individuals, family accounts and institutions.</div>
+          </div>
+          <div class="toggle">+</div>
+        </div>
+
+        <div class="product reveal" data-i="2">
+          <div class="idx">02</div>
+          <div class="body">
+            <h3>Mutual Funds</h3>
+            <p class="summary">A pooled, professionally managed fund that gives you diversified market exposure without needing a large sum or a standing portfolio to get started.</p>
+            <div class="detail">Your contribution is invested alongside other unit holders under one prospectus and one strategy, with daily-priced units so you can see the value of your holding at any time. A practical entry point into disciplined investing.</div>
+          </div>
+          <div class="toggle">+</div>
+        </div>
+
+        <div class="product reveal" data-i="3">
+          <div class="idx">03</div>
+          <div class="body">
+            <h3>Money Market Fund <span class="tag">Launching soon</span></h3>
+            <p class="summary">A low-volatility fund for capital you want working harder than a savings account, without taking on the swings of the broader market.</p>
+            <div class="detail">Built for short-horizon capital — operating cash, savings goals, or a holding position between decisions — prioritising capital preservation and steady income over growth. Join the waiting list to be notified at launch.</div>
+          </div>
+          <div class="toggle">+</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="approach">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="num">02 / APPROACH</span>
+          <h2>How we handle capital that isn't ours</h2>
+        </div>
+      </div>
+      <div class="approach-grid">
+        <div class="approach-item reveal">
+          <div class="pnum">i.</div>
+          <h3>Discipline over instinct</h3>
+          <p>Every mandate runs against a written policy. Decisions are checked against it, not against the mood of the market that week.</p>
+        </div>
+        <div class="approach-item reveal">
+          <div class="pnum">ii.</div>
+          <h3>Plain reporting</h3>
+          <p>You should be able to read your statement and understand it. No jargon standing in for an actual explanation.</p>
+        </div>
+        <div class="approach-item reveal">
+          <div class="pnum">iii.</div>
+          <h3>Access without a minimum you can't meet</h3>
+          <p>Portfolio management for those ready for a bespoke mandate; a mutual fund for those who want in without a large opening balance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="clients">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="num">03 / CLIENTS</span>
+          <h2>What our clients say</h2>
+        </div>
+      </div>
+      <div class="carousel reveal" id="testimonialCarousel">
+        <div class="carousel-viewport">
+          <div class="carousel-track" id="carouselTrack">
+            <div class="quote">
+              <blockquote>"I finally have a statement I can read in five minutes and actually understand what I own and why."</blockquote>
+              <div class="attrib"><span class="who">Adaeze O.</span>Portfolio Management client</div>
+            </div>
+            <div class="quote">
+              <blockquote>"Switching my savings into their mutual fund was the easiest investing decision I've made — and the reporting is honest about the down months too."</blockquote>
+              <div class="attrib"><span class="who">Tunde B.</span>Mutual Fund unit holder</div>
+            </div>
+            <div class="quote">
+              <blockquote>"They manage our staff pension top-up fund the way we'd want to manage it ourselves, if we had the time."</blockquote>
+              <div class="attrib"><span class="who">Chioma K.</span>Institutional client</div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+      <p style="margin-top:22px;font-size:12px;color:var(--ink-soft);">Sample client feedback shown for illustration — replace with verified client quotes before publishing.</p>
+    </div>
+  </section>
+
+  <section id="location">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="num">04 / VISIT US</span>
+          <h2>Where to find us</h2>
+        </div>
+      </div>
+      <div class="loc-grid reveal">
+        <div class="loc-info">
+          <div class="ledger" style="margin-top:0;">
+            <div class="ledger-row"><span class="label">Office</span><span class="figure">Victoria Island, Lagos</span></div>
+            <div class="ledger-row"><span class="label">Phone</span><span class="figure">+234 [phone number]</span></div>
+            <div class="ledger-row"><span class="label">Email</span><span class="figure">hello@possibilityfundlimited.com</span></div>
+            <div class="ledger-row"><span class="label">Hours</span><span class="figure">Mon – Fri, 8:00 – 17:00</span></div>
+            <div class="ledger-row"><span class="label">Right now</span><span class="figure"><span class="status-chip" id="statusChip"><span class="dot"></span>—</span> · <span class="lagos-clock" id="lagosClock">--:--:--</span></span></div>
+          </div>
+          <a class="directions-link" href="https://www.google.com/maps/search/?api=1&query=Victoria+Island+Lagos+Nigeria" target="_blank" rel="noopener">
+            Get directions
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+          </a>
+        </div>
+        <div class="map-frame">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="300" fill="var(--paper-raised)"/>
+            <g stroke="var(--line)" stroke-width="2">
+              <line x1="0" y1="60" x2="400" y2="60"/>
+              <line x1="0" y1="150" x2="400" y2="150"/>
+              <line x1="0" y1="230" x2="400" y2="230"/>
+              <line x1="90" y1="0" x2="90" y2="300"/>
+              <line x1="230" y1="0" x2="230" y2="300"/>
+              <line x1="320" y1="0" x2="320" y2="300"/>
+            </g>
+            <rect x="120" y="90" width="70" height="40" fill="none" stroke="var(--line)" stroke-width="2"/>
+            <rect x="250" y="170" width="50" height="35" fill="none" stroke="var(--line)" stroke-width="2"/>
+            <rect x="30" y="180" width="45" height="30" fill="none" stroke="var(--line)" stroke-width="2"/>
+            <path d="M200 148 C 205 120, 210 110, 214 96" fill="none" stroke="var(--orange)" stroke-width="3" opacity="0.55"/>
+            <circle class="pin-ping" cx="214" cy="96" r="9" fill="var(--orange)"/>
+            <circle cx="214" cy="96" r="7" fill="var(--orange)"/>
+            <path d="M214 96 c 0 -16 -24 -16 -24 -3 c 0 12 24 12 24 -3z" fill="var(--orange)"/>
+            <circle cx="214" cy="93" r="4" fill="var(--paper-raised)"/>
+            <text x="224" y="90" font-family="Public Sans, sans-serif" font-size="12" fill="var(--ink)" font-weight="600">Possibility Fund</text>
+            <text x="224" y="104" font-family="Public Sans, sans-serif" font-size="10.5" fill="var(--ink-soft)">Victoria Island, Lagos</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-band">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="num" style="color:var(--orange);">05 / GET IN TOUCH</span>
+          <h2>Let's talk about your portfolio</h2>
+          <p class="section-sub">Tell us where your money sits today, and we'll tell you plainly whether we can do better with it.</p>
+        </div>
+        <a href="mailto:hello@possibilityfundlimited.com" class="cta-btn">Email us</a>
+      </div>
+      <div class="contact-grid reveal">
+        <div class="ledger" style="margin-top:0;">
+          <div class="ledger-row"><span class="label">Email</span><span class="figure"><a href="mailto:hello@possibilityfundlimited.com">hello@possibilityfundlimited.com</a></span></div>
+          <div class="ledger-row"><span class="label">Phone</span><span class="figure"><a href="tel:+234">+234 [phone number]</a></span></div>
+          <div class="ledger-row"><span class="label">Office</span><span class="figure">Victoria Island, Lagos, Nigeria</span></div>
+          <div class="ledger-row"><span class="label">Right now</span><span class="figure"><span class="status-chip" id="statusChip2"><span class="dot"></span>—</span> · <span class="lagos-clock" id="lagosClock2">--:--:--</span></span></div>
+        </div>
+        <div>
+          <p style="color:#B9B0A0;font-size:14.5px;max-width:42ch;">Prefer to type it out first? Use the chat in the corner — it can walk you through our products and pass your details on to the team.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclosure">
+      © <span id="year"></span> Possibility Fund Limited. All rights reserved. Investments carry risk, including possible loss of principal; past performance is not a guide to future results. [Insert regulatory registration / SEC license details here.]
+    </div>
+    <div>Fund, Portfolio &amp; Wealth Managers</div>
+  </div>
+</footer>
+
+<button class="chat-launcher" id="chatLauncher" aria-label="Open chat">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+</button>
+
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-head">
+    <img src="data:image/jpeg;base64,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mrkv2d/QpRG7JO0M4mtrr8DgcCEaCwZv3QN1t8nr94Jhk+J7d8JR3zvM+CuaJyZ8NI2Tfh1kV8XfESJi74g7RODviqWwd8VC2DnipTg74qmLvirYu9D/2gAMAwEAAgADAAAAEKwwwwwyafB2wwwwwwwwx1/fffffQAvBz/ffffffffQPfffffVK/PDHffffffffQPfffffeo/PKe/fffffffQPfffffZYfPArRfffffffQPffffXc5vPPC33/fffffQPffffSFfPPPPLKUQ5+fQU/fffeRYRTdAHaUvOMHP7gPffXQy5MI+EbvI/PPPPPPPXiiivDktV5rr5vPPBMePzgvafPB3rzHPAKvAq9/fQPPPPPPFrBnrPETgr+JffQDTjy1dPOChc+vvCGffffQAPfe5ZRNjY0+hl0/ffffQPfffUqZ4LPPPPPAfffffQPffffffaav8AzzwbH33330D33333332h0vzwOz33330D333333331SnzwMH33330D3333333331TzxEH33330AT33333333/AM887l99999D/wDPPPPPPPIgvPIXvPPPPIP/xAAuEQABAwIFAgYDAAIDAAAAAAABAAIDBBEFEiAhMRATFDAyM0FSIlFxQoFhobH/2gAIAQIBAT8AsFYKwVgrBWC2VH7DemJC8BQAVgrBWCsFYKwVgrBWC2Q1ftUfsN/nSpZnic1H9eU7lDV+1R+w3rWQmKU/ryncoa6P2G9cRp+4zM3kf+eU7lDUVA3LE0f8aK+kMZzs4K2+PIdyhpIuqePuyBqtbQ5ocLFVWHFn5R8I7HjW7lDSPlYTAbmQ656GKXcbFS4dNFuNwi0tO4W3S3SyGmGJ0r8rVFGI2BoTnBouVJiD3OywNQirn7l1llro973VJPLKD3G2WIVDhJlYVhrMsN/30cxruQjSwnlq8FT/AFXgaf6heCp/qvBwfVDQxjpHBrVR0ogbvz0e51ZPkb6QooWRNysCnxTtktDd1E8vYHO5VZWH2ofUqWkZAMz/AFFAAbDyAiQgoaWSZ1mcKmo44Btz0r5O3ASFh8XbhB+SqyrEIyt9Sjw3uDPKd1V1eU9mHlUdGIPyPqKxNhyB4+FA/PGHaJp44Rd5UmLfQI4hUH5XjKg/5IUkx4amYZO71WChwuNu790GhosOuKe0P6pK1sULWs5sqSjIPdk5VXWH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" alt="">
+    <div>
+      <div class="t">Possibility Fund</div>
+      <div class="s">Ask about our products</div>
+    </div>
+    <button class="chat-close" id="chatClose" aria-label="Close chat">&times;</button>
+  </div>
+  <div class="chat-body" id="chatBody">
+    <div class="msg bot">Hi — I'm the Possibility Fund concierge. Ask me about Portfolio Management, our Mutual Fund, or the upcoming Money Market Fund.</div>
+  </div>
+  <div class="chat-input-row">
+    <textarea id="chatInput" rows="1" placeholder="Type a question…"></textarea>
+    <button class="chat-send" id="chatSend" aria-label="Send">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+    </button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
